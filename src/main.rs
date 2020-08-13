@@ -20,7 +20,13 @@ fn main() {
         //  trim() must be used to remove the newline character inserted by
         //  pressing the 'enter' key
         //  expect is necessary to handle any other parsing errors
-        let guess: u32 = guess.trim().parse().expect("Please type a valid number!");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => {
+                println!("Not a valid number...");
+                continue;
+            },
+        };
 
         // println!();
         println!("You guessed {}", guess);
