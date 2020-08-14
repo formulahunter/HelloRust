@@ -1,0 +1,5 @@
+#   JetBrains project directory
+/.idea
+
+#   Rust compiler target(s)
+/target
